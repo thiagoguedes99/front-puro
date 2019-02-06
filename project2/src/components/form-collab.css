@@ -1,0 +1,95 @@
+/* 
+  : pseudo-class - quando adiciona uma classe fictícia
+  :: pseudo-element - quando adiciona um elemento fictício.
+ */
+
+
+
+.form-collab {
+  width: 80vw;
+  /* width: 80%; */
+  text-align: center;
+
+}
+
+/* pega o último elemento do tipo label */
+.form-collab .label:not(:last-of-type) {
+  margin-bottom: var(--specing-medium);
+}
+
+.form-collab .label::after {
+  content: '';
+  width: 100%;
+  display: block;
+  /* opacity: 0; */
+  height: 20px;
+  transform: scaleX(0);
+  background-color: var(--color-frist);
+  transition: transform linear 1s;
+  will-change: transform;
+}
+.form-collab .label:hover:after {
+  /* opacity: 1; */
+  transform: scaleX(1);
+}
+
+.form-collab .title {
+  display: block;
+  font-size: 30px;
+  margin-bottom: 6px;
+}
+
+.form-collab .subTitle {
+  display: block;
+  font-size: 14px;
+  color: var(--color-frist);
+  font-weight: bold;
+  margin-bottom: var(--specing-medium);
+}
+
+.form-collab .input {
+  width: 100%;
+  /* 2em - pega o tamanho da fonte do pai (2em é o dobro da fonte) */
+  height: 2em;
+  font-weight: bold;
+  background-color: transparent;
+  border-bottom: 2px solid var(--color-second);
+}
+.form-collab .input::after {
+  content: '';
+  width: 100%;
+  height: 20px;
+  background-color: var(--color-frist);
+}
+.form-collab .input::selection {
+  background-color: var(--color-frist);
+  color: var(--color-zero);
+}
+.form-collab .input:focus,
+.form-collab .input:hover {
+  outline: transparent;
+  border-bottom-color: var(--color-frist);
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.form-collab .front-end-label {
+  font-size: 18px;
+  background-color: var(--color-second-light);
+  padding: 8px;  
+  cursor: pointer;
+}
+.form-collab .front-end-label::selection {
+  background-color: transparent;
+}
+
+.form-collab .front-end-input {
+  display: none;
+}
+
+.form-collab .front-end-input:checked + .front-end-label {
+  background-color: var(--color-frist);
+  color: var(--color-zero);
+}

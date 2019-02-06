@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  height: 100%;
+  
+  /* centraliza horizontal */
+  justify-content: center;
+
+  /* centraliza vertical */
+  align-items: center;
+}
