@@ -25,7 +25,7 @@
   height: 20px;
   transform: scaleX(0);
   background-color: var(--color-frist);
-  transition: transform linear 1s;
+  transition: transform 1s linear;
   will-change: transform;
 }
 .form-collab .label:hover:after {
@@ -54,6 +54,7 @@
   font-weight: bold;
   background-color: transparent;
   border-bottom: 2px solid var(--color-second);
+  margin-bottom: var(--specing-medium);
 }
 .form-collab .input::after {
   content: '';
@@ -75,21 +76,72 @@
   font-style: italic;
 }
 
-.form-collab .front-end-label {
+.tag {
+  display: inline-block;
+  position: relative;
+  transition: opacity 200ms linear;
+}
+
+.tag .label {
+  display: inline-block;
   font-size: 18px;
   background-color: var(--color-second-light);
   padding: 8px;  
   cursor: pointer;
+  animation: vibrationUnChecked 300ms linear;
 }
-.form-collab .front-end-label::selection {
+.tag .label::selection {
   background-color: transparent;
 }
 
-.form-collab .front-end-input {
+.tag .input {
   display: none;
 }
 
-.form-collab .front-end-input:checked + .front-end-label {
+.tag .input:checked + .label {
   background-color: var(--color-frist);
   color: var(--color-zero);
+  animation: vibrationChecked 300ms linear;
+}
+
+.tag .remove {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  font-size: 16px;
+  top: -5px;
+  right: -5px;
+  border-radius: 50%;
+  padding: 2px;
+  background-color: var(--color-frist);
+  color: var(--color-zero);
+  cursor: pointer;
+}
+
+.delete {
+  opacity: 0;
+}
+
+@keyframes vibrationChecked {
+  33% {
+    transform: rotate(10deg);
+  }
+  66% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes vibrationUnChecked {
+  33% {
+    transform: rotate(-10deg);
+  }
+  66% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }

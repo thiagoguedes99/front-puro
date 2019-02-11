@@ -31,15 +31,24 @@
 
       <input class="input" type="text" placeholder="não tem aqui? escreva ok :)">
 
-      <fieldset>
-        <input class="front-end-input" type="checkbox" name="front-end" id="front-end">
-        <label class="front-end-label" for="front-end">Front-end</label>
-
-        <input class="front-end-input" type="checkbox" name="html" id="html">
-        <label class="front-end-label" for="html">html</label>
-
-        <input class="front-end-input" type="checkbox" name="css" id="css">
-        <label class="front-end-label" for="css">css</label>
+      <fieldset id="app">
+        <div class="tag">
+          <input class="input" type="checkbox" name="front-end" id="front-end">
+          <label class="label" for="front-end">Front-end</label>
+          <span class="remove">x</span>
+        </div>
+        
+        <div class="tag">
+          <input class="input" type="checkbox" name="html" id="html">
+          <label class="label" for="html">html</label>
+          <span class="remove">x</span>
+        </div>
+        
+        <div class="tag">
+          <input class="input" type="checkbox" name="css" id="css">
+          <label class="label" for="css">css</label>
+          <span class="remove">x</span>
+        </div>
       </fieldset>
     </form>
   </main>
